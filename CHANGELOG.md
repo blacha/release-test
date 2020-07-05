@@ -1,3 +1,12 @@
+# [2.1.0](https://github.com/blacha/release-test/compare/v2.0.0...v2.1.0) (2020-07-05)
+
+
+### Features
+
+* adding git repo ([86cebec](https://github.com/blacha/release-test/commit/86cebec07202c6d072627f0a0d435ed405797ff5))
+
+
+
 # 2.0.0 (2020-07-05)
 
 
