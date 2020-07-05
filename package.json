@@ -1,7 +1,8 @@
 {
-  "name": "changelog",
+  "name": "release-test",
   "version": "2.0.0",
   "main": "index.js",
+  "repository": "git@github.com:blacha/release-test.git",
   "author": "Blayne Chard <bchard@linz.govt.nz>",
   "license": "MIT",
   "scripts": {
