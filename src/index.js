@@ -32,6 +32,8 @@ async function main() {
     if (Math.random() < 0.5) loc = 'bar'
 
     if (typeof document !== 'undefined') evalMyLocationBar()
+
+    console.log(NotARealVar)
 }
 
 /** Fetch data from a url and eval it! #safe-as-houses */
