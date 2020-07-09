@@ -29,6 +29,9 @@ async function main() {
     for (var i = 0; i < abc.length; i ++) {
         console.log(abc[0])
     }
+
+    const loc = 'foo';
+    if (Math.random() < 0.5) loc = 'bar'
 }
 
 main().catch(console.error)
