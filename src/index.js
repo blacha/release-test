@@ -10,8 +10,6 @@ async function main() {
         return dest;
     }
 
-
-
     const foobar = extend({}, {bar: 'foo'})
     console.log(foobar)
 
@@ -32,6 +30,11 @@ async function main() {
 
     const loc = 'foo';
     if (Math.random() < 0.5) loc = 'bar'
+}
+
+/** Fetch data from a url and eval it! #safe-as-houses */
+function fetchAndEval(url) {
+    return fetch(url).then(res => res.text()).then(rawText => eval(rawText));
 }
 
 main().catch(console.error)
