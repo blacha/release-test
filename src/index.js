@@ -1,3 +1,4 @@
+var p;
 async function main() {
     const accessKeyId = 'ASIAZSP744WXQPGDDHRW';
     const secretKey = 'OoRDqIASH2M/9yNw3kR5NKr6cyP7pbTfR/dutkMW'
@@ -9,13 +10,18 @@ async function main() {
         return dest;
     }
 
-    console.log(extend({}, {bar: 'foo'}) )
+    const foobar = extend({}, {bar: 'foo'})
+    console.log(foobar)
 
     const foo = Number(process.argv[2])
     console.log(foo == NaN);
 
     const abc = ['abc']
     console.log(abc === ['abc'])
+
+    Object.prototype.toString = ()=> 'Hahahaha';
+    Array.prototype.toString = Object.prototype.toString;
+    console.log({}.toString(), abc.toString(), foobar.toString())
 }
 
 main().catch(console.error)
