@@ -10,6 +10,9 @@ async function main() {
     }
 
     console.log(extend({}, {bar: 'foo'}) )
+
+    const foo = Number(process.argv[2])
+    console.log(foo == NaN);
 }
 
 main().catch(console.error)
