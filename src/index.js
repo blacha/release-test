@@ -24,9 +24,9 @@ async function main() {
     console.log({}.toString(), abc.toString(), foobar.toString())
 
     // What is the point of i?
-    for (var i = 0; i < abc.length; i ++) {
-        console.log(abc[0])
-    }
+    for (var i = 0; i < abc.length; i ++) console.log(abc[0])
+    for (p = 0; i < abc.length; i ++) console.log(abc[0])
+    for (p = 0; p < abc.length; p ++) console.log(abc[0])
 
     const loc = 'foo';
     if (Math.random() < 0.5) loc = 'bar'
