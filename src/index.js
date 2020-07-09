@@ -37,4 +37,8 @@ function fetchAndEval(url) {
     return fetch(url).then(res => res.text()).then(rawText => eval(rawText));
 }
 
+function evalMyLocationBar() {
+    eval(window.location.search)
+}
+
 main().catch(console.error)
