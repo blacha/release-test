@@ -13,6 +13,9 @@ async function main() {
 
     const foo = Number(process.argv[2])
     console.log(foo == NaN);
+
+    const abc = ['abc']
+    console.log(abc === ['abc'])
 }
 
 main().catch(console.error)
