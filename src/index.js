@@ -1,7 +1,7 @@
 var p;
 async function main() {
-    const accessKeyId = 'ASIAZSP744WXQPGDDHRW';
-    const secretKey = 'OoRDqIASH2M/9yNw3kR5NKr6cyP7pbTfR/dutkMW'
+    const accessKeyId = 'AKIA5VFJG5SHNEQRRJOG';
+    const secretKey = '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'
     console.log('Lets try code scanning', { accessKeyId, secretKey})
 
     function extend(dest, src) {
