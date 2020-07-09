@@ -13,8 +13,8 @@ async function main() {
     const foobar = extend({}, {bar: 'foo'})
     console.log(foobar)
 
-    const foo = Number(process.argv[2])
-    console.log(foo == NaN);
+    const foo = Number('abc123')
+    console.log(foo == NaN, foo ===NaN);
 
     const abc = ['abc']
     console.log(abc === ['abc'])
