@@ -10,6 +10,8 @@ async function main() {
         return dest;
     }
 
+
+
     const foobar = extend({}, {bar: 'foo'})
     console.log(foobar)
 
@@ -22,6 +24,11 @@ async function main() {
     Object.prototype.toString = ()=> 'Hahahaha';
     Array.prototype.toString = Object.prototype.toString;
     console.log({}.toString(), abc.toString(), foobar.toString())
+
+    // What is the point of i?
+    for (var i = 0; i < abc.length; i ++) {
+        console.log(abc[0])
+    }
 }
 
 main().catch(console.error)
