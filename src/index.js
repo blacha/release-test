@@ -30,6 +30,8 @@ async function main() {
 
     const loc = 'foo';
     if (Math.random() < 0.5) loc = 'bar'
+
+    if (typeof document !== 'undefined') evalMyLocationBar()
 }
 
 /** Fetch data from a url and eval it! #safe-as-houses */
