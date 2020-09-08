@@ -7,11 +7,9 @@
   "author": "Blayne Chard <bchard@linz.govt.nz>",
   "license": "MIT",
   "scripts": {
-    "start": "node src/index.js",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+    "start": "node src/index.js"
   },
   "dependencies": {
-    "conventional-changelog-cli": "^2.0.34"
   },
   "devDependencies": {
     "eslint": "^7.4.0",
