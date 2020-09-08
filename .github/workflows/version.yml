@@ -10,4 +10,6 @@ jobs:
   version:
     runs-on: ubuntu-latest
     steps:
+    - name: Begin CI...
+      uses: actions/checkout@v2
     - run: npm version ${{ github.event.inputs.version }}
