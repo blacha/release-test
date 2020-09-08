@@ -12,4 +12,9 @@ jobs:
     steps:
     - name: Begin CI...
       uses: actions/checkout@v2
-    - run: npm version ${{ github.event.inputs.version }}
+    - name: Use Node 12
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - run: yarn
+    - run: yarn version ${{ github.event.inputs.version }}
