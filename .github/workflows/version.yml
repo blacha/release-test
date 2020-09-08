@@ -17,4 +17,4 @@ jobs:
       with:
         node-version: 12.x
     - run: yarn
-    - run: yarn version ${{ github.event.inputs.version }}
+    - run: npm version ${{ github.event.inputs.version }}
