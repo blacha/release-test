@@ -23,3 +23,5 @@ jobs:
         git config user.email "<>"
     - run: yarn
     - run: npm version ${{ github.event.inputs.version }}
+    - run: git push origin master
+    - run: git push --tags
