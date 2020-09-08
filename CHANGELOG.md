@@ -1,3 +1,12 @@
+## [2.1.2](https://github.com/blacha/release-test/compare/v2.1.1...v2.1.2) (2020-09-08)
+
+
+### Features
+
+* version bump script ([3388e3f](https://github.com/blacha/release-test/commit/3388e3f1d08fe8f369e76e2d27b36503c8e9d2a0))
+
+
+
 ## 2.1.1 (2020-09-08)
 
 
