@@ -1,7 +1,13 @@
 name: 'Version'
-on: [workflow_dispatch]
+on: 
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version'     
+        required: true
+        default: 'patch'
 jobs:
   version:
     runs-on: ubuntu-latest
     steps:
-    - run: npm version
+    - run: npm version ${{ github.event.inputs.version }}
