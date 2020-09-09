@@ -3,15 +3,15 @@
     "packages/*"
   ],
   "npmClient": "yarn",
-	"useWorkspaces": true,
-  "version": "3.1.0",
+  "useWorkspaces": true,
+  "version": "3.2.0",
   "command": {
     "publish": {
       "registry": "https://npm.pkg.github.com"
     },
     "version": {
-			"yes": true,
+      "yes": true,
       "conventionalCommits": true
-		}
+    }
   }
 }
