@@ -32,4 +32,4 @@ jobs:
     - run: ./node_modules/.bin/lerna changed
 
     # create new version (& push to github) (skips ci to avoid an infinite loop)
-    - run: ./node_modules/.bin/lerna version
+    - run: ./node_modules/.bin/lerna version --conventional-commits
