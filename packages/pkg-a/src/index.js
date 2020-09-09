@@ -1,1 +1,6 @@
-console.log('Hello World: v' + require('../package.json').version)
+
+module.exports ={
+    handler() {
+        console.log('Hello World: v' + require('../package.json').version)
+    }
+}
