@@ -23,7 +23,9 @@ jobs:
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
     - run: yarn install --frozen-lockfile --check-files
     # print what changed
-    - run: ./node_modules/.bin/lerna changed
+    - run: npx lerna changed
 
     # create new version (& push to github)
-    - run: ./node_modules/.bin/lerna version --conventional-commits
+    - run: npx lerna version --conventional-commits
+
+    - run: npx lerna publish from-git
