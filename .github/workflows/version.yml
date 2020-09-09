@@ -25,5 +25,5 @@ jobs:
     # print what changed
     - run: ./node_modules/.bin/lerna changed
 
-    # create new version (& push to github) (skips ci to avoid an infinite loop)
+    # create new version (& push to github)
     - run: ./node_modules/.bin/lerna version --conventional-commits
