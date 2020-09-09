@@ -1,34 +1,36 @@
-name: 'Version'
+name: "Version"
 on: [workflow_dispatch]
 jobs:
   version:
     # master-only. ignore commits with `[skip ci]`
-    if: ${{ github.ref == 'refs/heads/master' && !contains(github.event.head_commit.message, '[skip ci]') }} 
+    if: ${{ github.ref == 'refs/heads/master' && !contains(github.event.head_commit.message, '[skip ci]') }}
 
     runs-on: ubuntu-latest
     steps:
-    - name: Begin CI...
-      uses: actions/checkout@v2
-      with:
-        # pulls all commits (needed for lerna to correctly version)
-        # see https://stackoverflow.com/a/60184319/9285308 & https://github.com/actions/checkout
-        fetch-depth: "0"
-    # pulls all tags (needed for lerna to correctly version)
-    - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/* # see https://stackoverflow.com/a/60184319/9285308
-    - name: Use Node 12
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
+      - name: Begin CI...
+        uses: actions/checkout@v2
+        with:
+          # pulls all commits (needed for lerna to correctly version)
+          # see https://stackoverflow.com/a/60184319/9285308 & https://github.com/actions/checkout
+          fetch-depth: "0"
+      # pulls all tags (needed for lerna to correctly version)
+      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/* # see https://stackoverflow.com/a/60184319/9285308
+      - name: Use Node 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
 
-    - name: setup git config
-      run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-    - run: yarn install --frozen-lockfile --check-files
-    # print what changed
-    - run: npx lerna changed
+      - name: setup git config
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - run: yarn install --frozen-lockfile --check-files
+      # print what changed
+      - run: npx lerna changed
 
-    # create new version (& push to github)
-    - run: npx lerna version --conventional-commits
+      # create new version (& push to github)
+      - run: npx lerna version --conventional-commits
 
-    - run: npx lerna publish from-git
+      - run: npx lerna publish from-git
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
