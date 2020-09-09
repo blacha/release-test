@@ -1,11 +1,5 @@
 name: 'Version'
-on: 
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version'     
-        required: true
-        default: 'patch'
+on: [workflow_dispatch]
 jobs:
   version:
     runs-on: ubuntu-latest
