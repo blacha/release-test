@@ -12,6 +12,12 @@ jobs:
     steps:
     - name: Begin CI...
       uses: actions/checkout@v2
+      with:
+        # pulls all commits (needed for lerna to correctly version)
+        # see https://stackoverflow.com/a/60184319/9285308 & https://github.com/actions/checkout
+        fetch-depth: "0"
+    # pulls all tags (needed for lerna to correctly version)
+    - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/* # see https://stackoverflow.com/a/60184319/9285308
     - name: Use Node 12
       uses: actions/setup-node@v1
       with:
@@ -19,9 +25,11 @@ jobs:
 
     - name: setup git config
       run: |
-        git config user.name "GitHub Actions Bot"
-        git config user.email "<>"
-    - run: yarn
-    - run: npm version ${{ github.event.inputs.version }}
-    - run: git push origin master
-    - run: git push --tags
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+    - run: yarn install --frozen-lockfile --check-files
+    # print what changed
+    - run: ./node_modules/.bin/lerna changed
+
+    # create new version (& push to github) (skips ci to avoid an infinite loop)
+    - run: ./node_modules/.bin/lerna version
