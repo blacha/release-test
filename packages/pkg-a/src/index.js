@@ -1,1 +1,1 @@
-console.log('Hello World: ' + require('../package.json').version)
+console.log('Hello World: v' + require('../package.json').version)
