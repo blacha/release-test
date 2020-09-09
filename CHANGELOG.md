@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/blacha/release-test/compare/v3.4.0...v4.0.0) (2020-09-09)
+
+
+### Features
+
+* export as a function ([598fd1d](https://github.com/blacha/release-test/commit/598fd1d294d493d87ca18d4c5bbd80ff5be96120))
+
+
+### BREAKING CHANGES
+
+* console.log no longer runs on import
+
+
+
+
+
 # [3.4.0](https://github.com/blacha/release-test/compare/v3.3.0...v3.4.0) (2020-09-09)
 
 
