@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/blacha/release-test/compare/v4.0.0...v4.1.0) (2020-09-09)
+
+
+### Features
+
+* dont log the message just return it ([1790ef5](https://github.com/blacha/release-test/commit/1790ef5551047e3b1e32f06065e1275f68a09475))
+
+
+
+
+
 # [4.0.0](https://github.com/blacha/release-test/compare/v3.4.0...v4.0.0) (2020-09-09)
 
 
