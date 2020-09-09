@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/blacha/release-test/compare/v3.3.0...v3.4.0) (2020-09-09)
+
+
+### Features
+
+* include v in the version output ([6d53c89](https://github.com/blacha/release-test/commit/6d53c89b83605965d36866c0801f16300f4c1168))
+
+
+
+
+
 # [3.3.0](https://github.com/blacha/release-test/compare/v3.2.0...v3.3.0) (2020-09-09)
 
 
