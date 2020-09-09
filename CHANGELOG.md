@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/blacha/release-test/compare/v4.1.0...v4.2.0) (2020-09-09)
+
+
+### Features
+
+* template strings ([0ee0a98](https://github.com/blacha/release-test/commit/0ee0a987bd979f4cea536da2d26607f363313a21))
+
+
+
+
+
 # [4.1.0](https://github.com/blacha/release-test/compare/v4.0.0...v4.1.0) (2020-09-09)
 
 
