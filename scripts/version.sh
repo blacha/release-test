@@ -5,7 +5,7 @@
 set -e
 
 npx lerna changed -a
-npx lerna version --conventional-commits  --no-push
+npx lerna version --conventional-commits --no-push -m 'release: %s' 
 
 CURRENT_VERSION=$(node -p "require('./lerna.json').version")
 git checkout -b release/v${CURRENT_VERSION}
