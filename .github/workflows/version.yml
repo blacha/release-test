@@ -25,13 +25,18 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      - run: yarn install --frozen-lockfile --check-files
+      # - run: yarn install --frozen-lockfile --check-files
+
+      - run: git tag d$(date +%s)
+      - run: git push --tags
+        
+
       # print what changed
-      - run: npx lerna changed
+      # - run: npx lerna changed
 
-      # create new version (& push to github)
-      - run: npx lerna version --conventional-commits
+      # # create new version (& push to github)
+      # - run: npx lerna version --conventional-commits
 
-      - run: npx lerna publish from-git
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - run: npx lerna publish from-git
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
