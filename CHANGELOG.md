@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.5.3](https://github.com/blacha/release-test/compare/v4.5.0...v4.5.3) (2020-09-10)
+
+
+### Bug Fixes
+
+* correct permissions ([bdbe654](https://github.com/blacha/release-test/commit/bdbe654105515067c3071b7ae96309a813177f1f))
+* dont publish as no permissions ([07496e6](https://github.com/blacha/release-test/commit/07496e62935f7efbf1ec10110a0963f8a24aeeef))
+* remove v ([52cc710](https://github.com/blacha/release-test/commit/52cc710e8d3278e047d40a314a04928037bc485e))
+
+
+### Features
+
+* include release in commit message ([209ad8e](https://github.com/blacha/release-test/commit/209ad8ebca0ace6bdbf16c2048cd27d41bdabfff))
+
+
+
+
+
 ## [4.5.2](https://github.com/blacha/release-test/compare/v4.5.0...v4.5.2) (2020-09-10)
 
 
