@@ -20,6 +20,7 @@ jobs:
 
       - name: Release And Deploy
         if: ${{ github.ref == 'refs/heads/master' && startsWith(github.event.head_commit.message, 'release:') }}
-        run: ./scripts/tag.sh
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          CURRENT_VERSION=$(node -p "require('./lerna.json').version")
+          git tag v${CURRENT_VERSION}
+          git push --tags
