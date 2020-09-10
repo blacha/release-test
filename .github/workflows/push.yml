@@ -19,7 +19,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Release And Deploy
-        if: startsWith(github.event.head_commit.message, 'release:')
+        if: ${{ github.ref == 'refs/heads/master' && startsWith(github.event.head_commit.message, 'release:') }}
         run: ./scripts/tag.sh
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
