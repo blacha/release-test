@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.4.0](https://github.com/blacha/release-test/compare/v4.2.0...v4.4.0) (2020-09-10)
+
+
+### Features
+
+* bump version ([f6f9129](https://github.com/blacha/release-test/commit/f6f91296cf997c0fd3693e08b52325de0c585d59))
+
+
+
+
+
+# [4.3.0](https://github.com/blacha/release-test/compare/v4.2.0...v4.3.0) (2020-09-10)
+
+
+### Features
+
+* bump version ([f6f9129](https://github.com/blacha/release-test/commit/f6f91296cf997c0fd3693e08b52325de0c585d59))
+
+
+
+
+
 # [4.2.0](https://github.com/blacha/release-test/compare/v4.1.0...v4.2.0) (2020-09-09)
 
 
