@@ -1,6 +1,6 @@
 {
   "name": "@blacha/pkg-b",
-  "version": "4.5.4",
+  "version": "5.0.0",
   "description": "",
   "license": "MIT",
   "author": "blacha",
@@ -10,7 +10,7 @@
   "main": "src/index.js",
   "scripts": {},
   "dependencies": {
-    "@blacha/pkg-a" : "4.5.4"
+    "@blacha/pkg-a": "^5.0.0"
   },
   "publishConfig": {
     "access": "public"

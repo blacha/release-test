@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0](https://github.com/blacha/release-test/compare/v3.0.1...v5.0.0) (2021-09-06)
+
+
+### Features
+
+* **pkg-b:** change wording ([d957a8f](https://github.com/blacha/release-test/commit/d957a8f052e0c56c77179d89d26ba480d435100e))
+
+
+
+
+
 ## [4.5.4](https://github.com/blacha/release-test/compare/v4.5.3...v4.5.4) (2020-09-10)
 
 **Note:** Version bump only for package release-test
