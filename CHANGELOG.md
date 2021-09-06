@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.6.0](https://www.github.com/blacha/release-test/compare/v4.5.4...v4.6.0) (2021-09-06)
+
+
+### Features
+
+* **pkg-a:** rename world ([51f1735](https://www.github.com/blacha/release-test/commit/51f1735b59fffe2727ca8c74de0438d257f9ab6c))
+* **pkg-b:** change wording ([d957a8f](https://www.github.com/blacha/release-test/commit/d957a8f052e0c56c77179d89d26ba480d435100e))
+* **pkg-b:** use handler from pkg-a ([d9511af](https://www.github.com/blacha/release-test/commit/d9511afb6fb6473d4381bb78eb9fc659a307556f))
+* say hello ([09ab5a1](https://www.github.com/blacha/release-test/commit/09ab5a1063fac5705903eacb2419a6c6693b843a))
+
+
+### Bug Fixes
+
+* **pkg-a:** go back to world ([4131850](https://www.github.com/blacha/release-test/commit/413185059f2de5d6a7fda76f8f11b6c7cf7b5e55))
+
 ## [4.5.4](https://github.com/blacha/release-test/compare/v4.5.3...v4.5.4) (2020-09-10)
 
 **Note:** Version bump only for package release-test
