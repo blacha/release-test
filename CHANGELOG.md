@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0](https://github.com/blacha/release-test/compare/v5.1.0...v5.2.0) (2021-09-06)
+
+
+### Features
+
+* **pkg-b:** single handler ([3ad48ff](https://github.com/blacha/release-test/commit/3ad48ff234e15dcb4bf01629d849377c6519dec0))
+
+
+
+
+
 # [5.1.0](https://github.com/blacha/release-test/compare/v5.0.0...v5.1.0) (2021-09-06)
 
 
