@@ -1,6 +1,6 @@
 
 module.exports ={
-    handler() {
-        return `Hello World ${require('../package.json').version}`;
+    handler(name) {
+        return `Hello World ${name}`;
     }
 }
