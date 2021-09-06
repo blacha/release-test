@@ -1,6 +1,7 @@
+import * as pkgA from '@blacha/pkg-a';
 
 module.exports ={
     handler() {
-        return `Hello W ${require('../package.json').version}`;
+        return pkgA.handler();
     }
 }
