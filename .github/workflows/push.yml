@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: blacha/yarn-typescript-action@v2.3.4
+      - uses: blacha/yarn-typescript-action@v1
           
