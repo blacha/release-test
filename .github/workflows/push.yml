@@ -27,4 +27,4 @@ jobs:
           CURRENT_VERSION=$(node -p "require('./lerna.json').version")
           git checkout -b release/v${CURRENT_VERSION}
           git tag -d v${CURRENT_VERSION}
-      - run: git push
+      - run: git push --tags
