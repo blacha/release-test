@@ -3,8 +3,28 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
+      - name: Begin CI...
+        uses: actions/checkout@v2
+        with:
+          # pulls all commits (needed for lerna to correctly version)
+          # see https://stackoverflow.com/a/60184319/9285308 & https://github.com/actions/checkout
+          fetch-depth: "0"
+      - name: Use Node 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+          registry-url: 'https://npm.pkg.github.com'
+      - name: setup git config
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Env
-        run: env
+      - run: |
+          CURRENT_VERSION=$(node -p "require('./lerna.json').version")
+          git checkout -b release/v${CURRENT_VERSION}
+          git tag -d v${CURRENT_VERSION}
+      - run: git push
