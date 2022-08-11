@@ -5,15 +5,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Begin CI...
-        uses: actions/checkout@v2
-        with:
-          # pulls all commits (needed for lerna to correctly version)
-          # see https://stackoverflow.com/a/60184319/9285308 & https://github.com/actions/checkout
-          fetch-depth: "0"
-      - name: Use Node 12
+      - uses: actions/checkout@v2
+      
+      - name: Use Node 18
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: 18.x
           registry-url: 'https://npm.pkg.github.com'
+          scope: '@blacha'
       
