@@ -3,8 +3,6 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
       - name: Begin CI...
@@ -18,12 +16,4 @@ jobs:
         with:
           node-version: 12.x
           registry-url: 'https://npm.pkg.github.com'
-      - name: setup git config
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-      - run: |
-          CURRENT_VERSION=$(node -p "require('./lerna.json').version")
-          git tag v${CURRENT_VERSION}-1
-      - run: git push --tags
+      
