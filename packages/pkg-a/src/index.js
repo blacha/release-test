@@ -1,6 +1,3 @@
-
-module.exports ={
-    handler(name) {
-        return `Hello World ${name}`;
-    }
+export function handler(name) {
+  return `Hello World ${name}`;
 }

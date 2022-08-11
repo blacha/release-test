@@ -7,14 +7,14 @@
   "author": "Blayne Chard <bchard@linz.govt.nz>",
   "license": "MIT",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "build": "echo no build",
+    "test": "echo no test",
+    "lint": "eslint packages/ --fix --quiet --ignore-path .gitignore"
   },
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^7.4.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "lerna": "^3.22.1"
+    "@linzjs/style": "^3.9.0"
   },
   "workspaces": {
     "packages": [
