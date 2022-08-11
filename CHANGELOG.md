@@ -36,6 +36,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+## [5.2.0](https://github.com/blacha/release-test/compare/v5.1.0...v5.2.0) (2022-08-11)
+
+
+### Features
+
+* **pkg-b:** single handler ([3ad48ff](https://github.com/blacha/release-test/commit/3ad48ff234e15dcb4bf01629d849377c6519dec0))
+
 ## [4.5.4](https://github.com/blacha/release-test/compare/v4.5.3...v4.5.4) (2020-09-10)
 
 **Note:** Version bump only for package release-test
