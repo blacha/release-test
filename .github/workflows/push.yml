@@ -3,6 +3,27 @@ on: [push]
 
 jobs:
   build:
-    uses: linz/action-typescript/.github/workflows/workflow.yml@workflow
-    with:
-      packageManager: 'npm'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: "yarn"
+
+      - name: Install
+        run: yarn install
+
+      - name: Build
+        run: yarn run build
+
+      - name: Lint
+        run: yarn run lint
+
+      - name: Check Formatting
+        run: git diff --exit-code
+
+      - name: Test
+        run: yarn run test
