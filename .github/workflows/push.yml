@@ -4,3 +4,5 @@ on: [push]
 jobs:
   build:
     uses: linz/action-typescript/.github/workflows/workflow.yml@workflow
+    with:
+      packageManager: 'npm'
