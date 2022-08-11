@@ -1,3 +1,3 @@
 export function handler(name) {
-  return `Hello World ${name}`;
+  return `Hello World ${name}!`;
 }
