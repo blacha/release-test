@@ -44,9 +44,9 @@ jobs:
         run: git diff --exit-code
 
       - name: Test
-        run: pnpm run test
+        run: pnpm -r test
 
       - name: Publish to Github
-        run: npm run publish
+        run: pnpm -r publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

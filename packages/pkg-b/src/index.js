@@ -1,7 +1,5 @@
 import * as pkgA from '@blacha/pkg-a';
 
-module.exports = {
-  handler() {
-    return pkgA.handler('Chicken');
-  },
+export const handler = () => {
+  return pkgA.handler('Chicken');
 };

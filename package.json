@@ -10,7 +10,6 @@
   "scripts": {
     "start": "node src/index.js",
     "build": "echo no build",
-    "test": "echo no test",
     "lint": "eslint packages/ --fix --quiet --ignore-path .gitignore"
   },
   "dependencies": {},

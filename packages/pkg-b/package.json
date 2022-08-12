@@ -9,7 +9,9 @@
     "src/"
   ],
   "main": "src/index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "node --test"
+  },
   "dependencies": {
     "@blacha/pkg-a": "^5.0.0"
   },
