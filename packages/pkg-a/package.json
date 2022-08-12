@@ -3,12 +3,15 @@
   "version": "5.0.0",
   "description": "",
   "license": "MIT",
+  "type": "module",
   "author": "blacha",
   "files": [
     "src/"
   ],
   "main": "src/index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "node --test"
+  },
   "publishConfig": {
     "access": "public"
   }
