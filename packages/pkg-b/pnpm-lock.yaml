@@ -1,7 +1,0 @@
-lockfileVersion: 5.4
-
-specifiers:
-  '@blacha/pkg-a': ^5.0.0
-
-dependencies:
-  '@blacha/pkg-a': link:../pkg-a
