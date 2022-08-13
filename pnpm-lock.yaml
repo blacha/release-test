@@ -1,10 +1,21 @@
 lockfileVersion: 5.4
 
-specifiers:
-  '@linzjs/style': ^3.9.0
+importers:
 
-devDependencies:
-  '@linzjs/style': 3.9.0
+  .:
+    specifiers:
+      '@linzjs/style': ^3.9.0
+    devDependencies:
+      '@linzjs/style': 3.9.0
+
+  packages/pkg-a:
+    specifiers: {}
+
+  packages/pkg-b:
+    specifiers:
+      '@blacha/pkg-a': ^5.0.0
+    dependencies:
+      '@blacha/pkg-a': link:../pkg-a
 
 packages:
 
