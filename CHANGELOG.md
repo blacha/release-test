@@ -36,6 +36,19 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+## [5.3.0](https://github.com/blacha/release-test/compare/v5.2.0...v5.3.0) (2022-08-13)
+
+
+### Features
+
+* add tests ([d81a0f1](https://github.com/blacha/release-test/commit/d81a0f127d2c03bc90edaba605ee14e66fc13fc6))
+* **pkg-a:** new feature ([f780410](https://github.com/blacha/release-test/commit/f780410d3c2d11d3eb40ff6fef4c17d39a1272bb))
+
+
+### Bug Fixes
+
+* lock file ([bc4cc91](https://github.com/blacha/release-test/commit/bc4cc9193397393b6593bf46786ea476b0595057))
+
 ## [5.2.0](https://github.com/blacha/release-test/compare/v5.1.0...v5.2.0) (2022-08-11)
 
 
