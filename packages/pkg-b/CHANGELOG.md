@@ -36,6 +36,25 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+## [5.1.0](https://github.com/blacha/release-test/compare/pkg-b-v5.0.0...pkg-b-v5.1.0) (2022-08-13)
+
+
+### Features
+
+* add tests ([d81a0f1](https://github.com/blacha/release-test/commit/d81a0f127d2c03bc90edaba605ee14e66fc13fc6))
+* **pkg-b:** change wording ([d957a8f](https://github.com/blacha/release-test/commit/d957a8f052e0c56c77179d89d26ba480d435100e))
+* **pkg-b:** double handler ([c7e336d](https://github.com/blacha/release-test/commit/c7e336dce5b18f9ba0c33c513847c9e2fd31e2d9))
+* **pkg-b:** single handler ([3ad48ff](https://github.com/blacha/release-test/commit/3ad48ff234e15dcb4bf01629d849377c6519dec0))
+* **pkg-b:** use handler from pkg-a ([d9511af](https://github.com/blacha/release-test/commit/d9511afb6fb6473d4381bb78eb9fc659a307556f))
+* say hello ([09ab5a1](https://github.com/blacha/release-test/commit/09ab5a1063fac5705903eacb2419a6c6693b843a))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @blacha/pkg-a bumped from ^5.0.0 to ^6.0.0
+
 ## [4.5.4](https://github.com/blacha/release-test/compare/v4.5.3...v4.5.4) (2020-09-10)
 
 **Note:** Version bump only for package @blacha/pkg-a
