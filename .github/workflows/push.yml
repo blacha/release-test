@@ -9,4 +9,4 @@ jobs:
         uses: linz/action-typescript@workflow
         with:
           registry-url: "https://npm.pkg.github.com"
-          package-manager: "pnpm"
+          package-manager: "yarn"
