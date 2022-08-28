@@ -8,3 +8,6 @@ jobs:
     with:
       registry-url: "https://npm.pkg.github.com"
       package-manager: "yarn"
+    steps:
+      - name: 'Test run'
+        run: ls -alh
