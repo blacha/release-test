@@ -1,13 +1,13 @@
-name: CI
+name: Build
+
 on: [push]
 
 jobs:
-  reusable_workflow_job:
+  build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: linz/action-typescript/.github/workflows/workflow@workflow
-        with:
-          package-manager: 'yarn'
+    uses: linz/action-typescript/.github/workflows/workflow@workflow
+    with:
+      registry-url: "https://npm.pkg.github.com"
 
   # build:
   #   runs-on: ubuntu-latest
