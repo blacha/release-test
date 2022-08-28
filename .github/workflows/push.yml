@@ -1,10 +1,11 @@
-name: CI
-on: [push]
+name: push
+
+on: 
+  push:
 
 jobs:
   reusable-workflow:
-    name: 'Reusable workflow Test'
-    uses: linz/action-typescript/.github/workflows/workflow.yml@workflow
+    uses: linz/action-typescript/.github/workflows/main.yml@v1
     with:
       registry-url: "https://npm.pkg.github.com"
       package-manager: "yarn"
