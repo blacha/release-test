@@ -1,19 +1,12 @@
-name: Build
-
+name: CI
 on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    uses: linz/action-typescript/.github/workflows/workflow.yml@workflow
-    with:
-      registry-url: "https://npm.pkg.github.com"
-
-  # build:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: linz/action-typescript/.github/workflows/workflow@workflow
-  #       with:
-  #         package-manager: 'yarn'
-  #     - run: |
-  #         ls -alh
+    steps:
+      - name: Build and test
+        uses: linz/action-typescript@workflow
+        with:
+          registry-url: "https://npm.pkg.github.com"
+          package-manager: 'yarn'
