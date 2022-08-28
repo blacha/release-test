@@ -5,26 +5,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2.2.2
-
-      - name: Use Node.js 18.x
-        uses: actions/setup-node@v2
+      - uses: linz/action-typescript/.github/workflows/workflow
         with:
-          node-version: 18.x
-          cache: "pnpm"
-
-      - name: Install
-        run: pnpm install
-
-      - name: Build
-        run: pnpm run build
-
-      - name: Lint
-        run: pnpm run lint
-
-      - name: Check Formatting
-        run: git diff --exit-code
-
-      - name: Test
-        run: pnpm -r test
+          package-manager: 'yarn'
