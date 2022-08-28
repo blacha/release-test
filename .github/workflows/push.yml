@@ -7,6 +7,6 @@ jobs:
     steps:
       - name: Build and test
         uses: linz/action-typescript@workflow
-        with:
-          registry-url: "https://npm.pkg.github.com"
-          package-manager: 'yarn'
+        # with:
+        #   registry-url: "https://npm.pkg.github.com"
+        #   package-manager: 'yarn'
