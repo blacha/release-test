@@ -8,3 +8,5 @@ jobs:
       - uses: linz/action-typescript/.github/workflows/workflow
         with:
           package-manager: 'yarn'
+      - run: |
+          ls -alh
