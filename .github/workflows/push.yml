@@ -8,7 +8,6 @@ jobs:
     uses: linz/action-typescript/.github/workflows/main.yml@v1
     with:
       registry-url: "https://npm.pkg.github.com"
-      package-manager: "pnpm"
 
   composite-action:
     runs-on: ubuntu-latest
@@ -17,4 +16,3 @@ jobs:
         uses: linz/action-typescript@v1
         with:
           registry-url: "https://npm.pkg.github.com"
-          package-manager: "pnpm"
