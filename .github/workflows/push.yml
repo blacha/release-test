@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    uses: linz/action-typescript/.github/workflows/workflow@workflow
+    uses: linz/action-typescript/.github/workflows/workflow.yml@workflow
     with:
       registry-url: "https://npm.pkg.github.com"
 
