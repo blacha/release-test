@@ -2,11 +2,18 @@ name: CI
 on: [push]
 
 jobs:
-  build:
+  reusable_workflow_job:
     runs-on: ubuntu-latest
     steps:
       - uses: linz/action-typescript/.github/workflows/workflow@workflow
         with:
           package-manager: 'yarn'
-      - run: |
-          ls -alh
+
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: linz/action-typescript/.github/workflows/workflow@workflow
+  #       with:
+  #         package-manager: 'yarn'
+  #     - run: |
+  #         ls -alh
