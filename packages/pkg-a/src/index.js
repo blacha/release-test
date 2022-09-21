@@ -3,5 +3,5 @@ export function handler(name) {
 }
 
 export function goodBye(name) {
-  return `Good bye, ${name}.`;
+  return `Good bye ${name}.`;
 }
