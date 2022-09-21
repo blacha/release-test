@@ -48,6 +48,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
   * dependencies
     * @blacha/pkg-a bumped from ^6.1.0 to ^6.2.0
 
+## [5.1.3](https://github.com/blacha/release-test/compare/pkg-b-v5.1.2...pkg-b-v5.1.3) (2022-09-21)
+
+
+### Bug Fixes
+
+* pkg-b change ([db74368](https://github.com/blacha/release-test/commit/db74368573e44f961c10196a30e21e088da95e68))
+
 ## [5.1.0](https://github.com/blacha/release-test/compare/pkg-b-v5.0.0...pkg-b-v5.1.0) (2022-08-13)
 
 
