@@ -36,6 +36,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @blacha/pkg-a bumped from ^6.0.0 to ^6.1.0
+
 ## [5.1.0](https://github.com/blacha/release-test/compare/pkg-b-v5.0.0...pkg-b-v5.1.0) (2022-08-13)
 
 

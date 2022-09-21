@@ -11,6 +11,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+## [6.1.0](https://github.com/blacha/release-test/compare/pkg-a-v6.0.0...pkg-a-v6.1.0) (2022-09-21)
+
+
+### Features
+
+* pkg-a change ([d5a06a1](https://github.com/blacha/release-test/commit/d5a06a1cc31aa9cc88ae34c438a50d5879b59db4))
+
 ## [6.0.0](https://github.com/blacha/release-test/compare/pkg-a-v5.2.0...pkg-a-v6.0.0) (2022-08-13)
 
 
