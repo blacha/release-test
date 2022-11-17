@@ -13,6 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Build and test
-        uses: linz/action-typescript@v1.0
+        uses: linz/action-typescript@v1.0.0
         with:
           registry-url: "https://npm.pkg.github.com"
