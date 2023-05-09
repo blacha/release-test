@@ -1,18 +1,21 @@
 name: push
 
-on: 
-  push:
+on: [push]
 
 jobs:
-  reusable-workflow:
-    uses: linz/action-typescript/.github/workflows/main.yml@v1
-    with:
-      registry-url: "https://npm.pkg.github.com"
-
-  composite-action:
+  build-containers:
     runs-on: ubuntu-latest
-    steps: 
-      - name: Build and test
-        uses: linz/action-typescript@v1.0.0
-        with:
-          registry-url: "https://npm.pkg.github.com"
+    steps:
+      - name: Setup docker tags
+        id: tags
+        uses:  actions/github-script@v6
+        with: 
+            result-encoding: string
+            script: 
+              const tags = [];
+              tags.push('ghcr.io/${{ github.repository }}:latest');
+              tags.push('ghcr.io/${{ github.repository }}:${{ steps.version.outputs.version }}');
+              console.log(github, context)
+              console.log('${{github.ref}}');
+              console.log('${{github.event.head_commit.message}}');
+              return tags.join(', ')
