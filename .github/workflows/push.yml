@@ -42,7 +42,7 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           tags: ${{ steps.tags.outputs.result }}
-          args:
+          build-args:
             GIT_VERSION=${{ steps.version.outputs.version }}
             GIT_HASH=${{ github.sha }}
           push: false
