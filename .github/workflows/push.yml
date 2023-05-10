@@ -24,12 +24,20 @@ jobs:
         with: 
             result-encoding: string
             script: 
-              const tags = [];
+              const suffix = [];
+              const repositories = [`ghcr.io/${{ github.repository }}:`]
               const isMaster = context.ref === 'refs/heads/master';
               const isRelease = context.payload.head_commit.message.startsWith('release:');
+
+              suffix.push('${{ steps.version.outputs.version }}');
+              suffix.push('latest');
+              if (isRelease) {
+                suffix.push('${{ steps.version.outputs.version_major_minor }}');
+                suffix.push('${{ steps.version.outputs.version_mjor }}');
+              }
               
               console.log({isMaster, isRelease});
-              return tags.join(', ')
+              return repositories.map(repo => suffix.map(tag => `${repo}${tag}`)).flat().join('\n')
 
       - name: Set up Docker Buildx
         id: buildx
