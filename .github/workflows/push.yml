@@ -30,7 +30,7 @@ jobs:
               const repositories = [
                 `ghcr.io/${{ github.repository }}:[suffix]`
               ];
-              
+
               /** If  an ECR login was add tags for ECR too */
               const ecrRegistry = `${{ steps.login-ecr.outputs.registry }}`;
               if (ecrRegistry != '') repositories.push(`${ecrRegistry}/eks-[suffix]`);
@@ -65,7 +65,7 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           tags: ${{ steps.tags.outputs.result }}
-          build-args:
+          build-args: |
             GIT_VERSION=${{ steps.version.outputs.version }}
             GIT_HASH=${{ github.sha }}
           push: false
