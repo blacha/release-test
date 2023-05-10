@@ -37,12 +37,16 @@ jobs:
               const isRelease = context.payload.head_commit.message.startsWith('release:');
               const suffix = [];
 
+              /* Latest must be the first tag */
               suffix.push('latest');
-              /* Order is important */
+
+              /* If release add "v5" and "v5.2" */
               if (isRelease) {
                 suffix.push('${{ steps.version.outputs.version_major_minor }}');
                 suffix.push('${{ steps.version.outputs.version_major }}');
               }
+
+              /** Always add specific version ":v5.2.0-1-84-g5c8099c" last */
               suffix.push('${{ steps.version.outputs.version }}');
 
               const tags = repositories.map(repo => suffix.map(suffix => repo.replace('[suffix]', suffix))).flat().join('\n');
