@@ -32,17 +32,15 @@ jobs:
               const isRelease = context.payload.head_commit.message.startsWith('release:');
               const suffix = [];
 
-              // Always include "latest" and 
               suffix.push('latest');
               suffix.push('${{ steps.version.outputs.version }}');
 
-              // If released add :v2 and v2.0 tags
               if (isRelease) {
                 suffix.push('${{ steps.version.outputs.version_major_minor }}');
                 suffix.push('${{ steps.version.outputs.version_mjor }}');
               }
 
-              const tags = repositories.map(repo => suffix.map(suffix => repo.replace('[suffix]', suffix))).flat().join('\n')
+              const tags = repositories.map(repo => suffix.map(suffix => repo.replace('[suffix]', suffix))).flat().join('\n');
               console.log(tags);
               return tags;
           
