@@ -36,12 +36,12 @@ jobs:
               const suffix = [];
 
               suffix.push('latest');
-              suffix.push('${{ steps.version.outputs.version }}');
-
+              /* Order is important */
               if (isRelease) {
                 suffix.push('${{ steps.version.outputs.version_major_minor }}');
                 suffix.push('${{ steps.version.outputs.version_major }}');
               }
+              suffix.push('${{ steps.version.outputs.version }}');
 
               const tags = repositories.map(repo => suffix.map(suffix => repo.replace('[suffix]', suffix))).flat().join('\n');
               console.log(tags);
