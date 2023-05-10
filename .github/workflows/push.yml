@@ -27,11 +27,8 @@ jobs:
             result-encoding: string
             script: 
               const tags = [];
-              tags.push('ghcr.io/${{ github.repository }}:latest');
-              tags.push('ghcr.io/${{ github.repository }}:${{ steps.version.outputs.version }}');
-
               const isMaster = context.ref === 'refs/heads/master';
               const isRelease = context.payload.head_commit.message.startsWith('release:');
-
-              console.log({isMaster, isRelease})
+              
+              console.log({isMaster, isRelease});
               return tags.join(', ')
