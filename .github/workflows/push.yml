@@ -30,6 +30,8 @@ jobs:
               const repositories = [
                 `ghcr.io/${{ github.repository }}:[suffix]`
               ];
+              const eksPath = `${{ steps.login-ecr.outputs.registry }}`;
+              if (eksPath != '') repositories.push(`${eksPath}/eks-[suffix]`);
 
               const isMaster = context.ref === 'refs/heads/master';
               const isRelease = context.payload.head_commit.message.startsWith('release:');
