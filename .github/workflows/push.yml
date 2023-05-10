@@ -26,12 +26,16 @@ jobs:
             script: 
               const suffix = [];
               const repositories = [`ghcr.io/${{ github.repository }}:[suffix]`];
-              
+
               const isMaster = context.ref === 'refs/heads/master';
               const isRelease = context.payload.head_commit.message.startsWith('release:');
               suffix.push('latest');
+              suffix.push('v2');
+              suffix.push('v2.0');
+              suffix.push('v2.0.1');
+
               console.log({isMaster, isRelease});
-              return repositories.map(repo => suffix.map(suffix => repo.replace('{suffix}', suffix))).flat().join('\n')
+              return repositories.map(repo => suffix.map(suffix => repo.replace('[suffix]', suffix))).flat().join('\n')
 
               # suffix.push('${{ steps.version.outputs.version }}');
               # if (isRelease) {
