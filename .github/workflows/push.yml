@@ -31,5 +31,5 @@ jobs:
               const isMaster = context.ref === 'refs/heads/master';
               const isRelease = context.payload.head_commit.message.startsWith('release:');
 
-              console.log({isMaaster, isRelease})
+              console.log({isMaster, isRelease})
               return tags.join(', ')
