@@ -37,7 +37,7 @@ jobs:
 
               if (isRelease) {
                 suffix.push('${{ steps.version.outputs.version_major_minor }}');
-                suffix.push('${{ steps.version.outputs.version_mjor }}');
+                suffix.push('${{ steps.version.outputs.version_major }}');
               }
 
               const tags = repositories.map(repo => suffix.map(suffix => repo.replace('[suffix]', suffix))).flat().join('\n');
