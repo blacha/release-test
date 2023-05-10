@@ -15,6 +15,9 @@ jobs:
               const tags = [];
               tags.push('ghcr.io/${{ github.repository }}:latest');
               tags.push('ghcr.io/${{ github.repository }}:${{ steps.version.outputs.version }}');
-              console.log(JSON.stringify(context, null, 2));
 
+              const isMaster = context.ref === 'refs/heads/master';
+              const isRelease = context.payload.head_commit.message.startsWith('release:');
+
+              console.log({isMaaster, isRelease})
               return tags.join(', ')
