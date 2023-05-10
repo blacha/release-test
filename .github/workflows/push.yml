@@ -11,9 +11,9 @@ jobs:
       - name: Get GIT Version infromation
         id: version
         run: |
-            GIT_VERSION=$(git describe --tags --always --match 'v*')
-            GIT_VERSION_MAJOR=$(echo $GIT_VERSION | cut -d. -f1)
-            GIT_VERSION_MAJOR_MINOR=$(echo $GIT_VERSION | cut -d. -f1,2)
+            # GIT_VERSION=$(git describe --tags --always --match 'v*')
+            # GIT_VERSION_MAJOR=$(echo $GIT_VERSION | cut -d. -f1)
+            # GIT_VERSION_MAJOR_MINOR=$(echo $GIT_VERSION | cut -d. -f1,2)
 
             echo "version=${GIT_VERSION}" >> $GITHUB_OUTPUT
             echo "version_major=${GIT_VERSION_MAJOR}" >> $GITHUB_OUTPUT
@@ -25,7 +25,8 @@ jobs:
             result-encoding: string
             script: 
               const suffix = [];
-              const repositories = [`ghcr.io/${{ github.repository }}:{suffix}`]
+              const repositories = [`ghcr.io/${{ github.repository }}:[suffix]`];
+              
               const isMaster = context.ref === 'refs/heads/master';
               const isRelease = context.payload.head_commit.message.startsWith('release:');
               suffix.push('latest');
