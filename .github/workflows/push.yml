@@ -11,9 +11,9 @@ jobs:
       - name: Get GIT Version infromation
         id: version
         run: |
-            # GIT_VERSION=$(git describe --tags --always --match 'v*')
-            # GIT_VERSION_MAJOR=$(echo $GIT_VERSION | cut -d. -f1)
-            # GIT_VERSION_MAJOR_MINOR=$(echo $GIT_VERSION | cut -d. -f1,2)
+            GIT_VERSION=$(git describe --tags --always --match 'v*')
+            GIT_VERSION_MAJOR=$(echo $GIT_VERSION | cut -d. -f1)
+            GIT_VERSION_MAJOR_MINOR=$(echo $GIT_VERSION | cut -d. -f1,2)
 
             echo "version=${GIT_VERSION}" >> $GITHUB_OUTPUT
             echo "version_major=${GIT_VERSION_MAJOR}" >> $GITHUB_OUTPUT
@@ -29,20 +29,18 @@ jobs:
 
               const isMaster = context.ref === 'refs/heads/master';
               const isRelease = context.payload.head_commit.message.startsWith('release:');
+
+              // Always include "latest" and 
               suffix.push('latest');
-              suffix.push('v2');
-              suffix.push('v2.0');
-              suffix.push('v2.0.1');
+              suffix.push('${{ steps.version.outputs.version }}');
 
-              console.log({isMaster, isRelease});
+              // If released add :v2 and v2.0 tags
+              if (isRelease) {
+                suffix.push('${{ steps.version.outputs.version_major_minor }}');
+                suffix.push('${{ steps.version.outputs.version_mjor }}');
+              }
+
               return repositories.map(repo => suffix.map(suffix => repo.replace('[suffix]', suffix))).flat().join('\n')
-
-              # suffix.push('${{ steps.version.outputs.version }}');
-              # if (isRelease) {
-              #   suffix.push('${{ steps.version.outputs.version_major_minor }}');
-              #   suffix.push('${{ steps.version.outputs.version_mjor }}');
-              # }
-              
           
       - name: Set up Docker Buildx
         id: buildx
