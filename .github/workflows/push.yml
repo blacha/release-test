@@ -25,20 +25,20 @@ jobs:
             result-encoding: string
             script: 
               const suffix = [];
-              const repositories = [`ghcr.io/${{ github.repository }}:`]
+              const repositories = [`ghcr.io/${{ github.repository }}:{suffix}`]
               const isMaster = context.ref === 'refs/heads/master';
               const isRelease = context.payload.head_commit.message.startsWith('release:');
-
-              suffix.push('${{ steps.version.outputs.version }}');
               suffix.push('latest');
-              if (isRelease) {
-                suffix.push('${{ steps.version.outputs.version_major_minor }}');
-                suffix.push('${{ steps.version.outputs.version_mjor }}');
-              }
-              
               console.log({isMaster, isRelease});
-              return repositories.map(repo => suffix.map(tag => `${repo}${tag}`)).flat().join('\n')
+              return repositories.map(repo => suffix.map(suffix => repo.replace('{suffix}', suffix))).flat().join('\n')
 
+              # suffix.push('${{ steps.version.outputs.version }}');
+              # if (isRelease) {
+              #   suffix.push('${{ steps.version.outputs.version_major_minor }}');
+              #   suffix.push('${{ steps.version.outputs.version_mjor }}');
+              # }
+              
+          
       - name: Set up Docker Buildx
         id: buildx
         uses: docker/setup-buildx-action@v2
