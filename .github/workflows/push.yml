@@ -11,12 +11,10 @@ jobs:
       - name: Get GIT Version infromation
         id: version
         run: |
-            GIT_HASH=$(git rev-parse HEAD)
             GIT_VERSION=$(git describe --tags --always --match 'v*')
             GIT_VERSION_MAJOR=$(echo $GIT_VERSION | cut -d. -f1)
             GIT_VERSION_MAJOR_MINOR=$(echo $GIT_VERSION | cut -d. -f1,2)
 
-            echo "hash=${GIT_HASH}" >> $GITHUB_OUTPUT
             echo "version=${GIT_VERSION}" >> $GITHUB_OUTPUT
             echo "version_major=${GIT_VERSION_MAJOR}" >> $GITHUB_OUTPUT
             echo "version_major_minor=${GIT_VERSION_MAJOR_MINOR}" >> $GITHUB_OUTPUT
@@ -32,3 +30,19 @@ jobs:
               
               console.log({isMaster, isRelease});
               return tags.join(', ')
+
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Docker build and push - Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./Dockerfile
+          platforms: linux/amd64
+          tags: ${{ steps.tags.outputs.result }}
+          args:
+            GIT_VERSION=${{ steps.version.outputs.version }}
+            GIT_HASH=${{ github.sha }}
+          push: false
