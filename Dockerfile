@@ -1,4 +1,4 @@
-FROM node:18-slim
+FROM alpine
 
 ARG GIT_VERSION
 ARG GIT_HASH

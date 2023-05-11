@@ -12,7 +12,6 @@ jobs:
           fetch-depth: 0
 
       - name: Get GIT Version infromation
-        id: version
         run: |
             GIT_VERSION=$(git describe --tags --always --match 'v*')
             GIT_VERSION_MAJOR=$(echo $GIT_VERSION | cut -d. -f1)
@@ -21,6 +20,7 @@ jobs:
             echo "version=${GIT_VERSION}" >> $GITHUB_OUTPUT
             echo "version_major=${GIT_VERSION_MAJOR}" >> $GITHUB_OUTPUT
             echo "version_major_minor=${GIT_VERSION_MAJOR_MINOR}" >> $GITHUB_OUTPUT
+
       - name: Setup docker tags
         id: tags
         uses:  actions/github-script@v6
@@ -31,7 +31,7 @@ jobs:
                 `ghcr.io/${{ github.repository }}:[suffix]`
               ];
 
-              /** If  an ECR login was add tags for ECR too */
+              /** If an ECR login was used add tags for ECR too */
               const ecrRegistry = `${{ steps.login-ecr.outputs.registry }}`;
               if (ecrRegistry != '') repositories.push(`${ecrRegistry}/eks-[suffix]`);
 
