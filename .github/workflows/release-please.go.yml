@@ -1,0 +1,55 @@
+name: Release
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release_please:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name}}
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          release-type: go
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  publish_release:
+    permissions:
+      contents: read
+      id-token: write
+
+    needs: release_please
+    runs-on: ubuntu-latest
+    if: ${{ needs.release_please.outputs.release_created }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-go@v4
+
+      # TODO build packages
+
+
+  upload_artifacts:
+    name: Add CLI Build Artifacts to Release
+    needs: [release_please, publish_release]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Adding assets require permissions
+    steps:
+      - name: Setup | Artifacts
+        uses: actions/download-artifact@v3
+
+      - name: Setup | Checksums
+        run: for file in argo-expr-*/argo-expr-*; do openssl dgst -sha256 -r "$file" | awk '{print $1}' > "${file}.sha256"; done
+
+      - name: Setup | Publish Release
+        run: |
+          gh release upload ${{ needs.release_please.outputs.tag_name }} argo-expr-*/argo-expr* --repo=blacha/argo-expr
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
