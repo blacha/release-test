@@ -33,9 +33,9 @@ jobs:
         fail-fast: false
         matrix:
           include:
-            - target: ${CLI_NAME}-x86_64-linux
+            - target: x86_64-linux
               os: ubuntu-latest
-              name: ${CLI_NAME}-x86_64-linux.tar.gz
+              name: x86_64-linux.tar.gz
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
@@ -54,14 +54,14 @@ jobs:
             cp ../README.md .
             cp ../CHANGELOG.md .
             cp ../LICENSE .
-            tar czvf ${{ matrix.name }} *  
+            tar czvf ${CLI_NAME}-${{ matrix.name }} *  
             cd -
 
       - name: Release | Upload artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ matrix.name }}
-          path: ${{ matrix.name }}
+          name: ${CLI_NAME}-${{ matrix.name }}
+          path: ${CLI_NAME}-${{ matrix.name }}
 
   upload_artifacts:
     name: Add Build Artifacts to Release
