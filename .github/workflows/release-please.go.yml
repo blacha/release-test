@@ -25,8 +25,15 @@ jobs:
       id-token: write
 
     needs: release_please
-    runs-on: ubuntu-latest
     if: ${{ needs.release_please.outputs.release_created }}
+    strategy:
+        fail-fast: false
+        matrix:
+          include:
+            - target: argo-expr-x86_64-linux
+              os: ubuntu-latest
+              name: argo-expr-x86_64-linux.tar.gz
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -34,6 +41,24 @@ jobs:
 
       - uses: actions/setup-go@v4
 
+      - name: Build Binary
+        run: |
+            go build ${{ matrix.target }}/argo-expr
+
+      - name: Pacakge release
+        run: |
+            cd ${{ matrix.target }}/
+            cp ../README.md .
+            cp ../CHANGELOG.md .
+            cp ../LICENSE .
+            tar czvf ../${{ matrix.name }} .
+            cd -
+
+      - name: Release | Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.name }}
+          path: ${{ matrix.name }}
 
   upload_artifacts:
     name: Add Build Artifacts to Release
@@ -42,13 +67,13 @@ jobs:
     permissions:
       contents: write # Adding assets require permissions
     steps:
-      - name: Setup | Artifacts
+      - name: Download Artifacts
         uses: actions/download-artifact@v3
 
-      - name: Setup | Checksums
+      - name: Create Checksums
         run: for file in argo-expr-*/argo-expr-*; do openssl dgst -sha256 -r "$file" | awk '{print $1}' > "${file}.sha256"; done
 
-      - name: Setup | Publish Release
+      - name: Add Artifactws To Release
         run: |
           gh release upload ${{ needs.release_please.outputs.tag_name }} argo-expr-*/argo-expr* --repo=blacha/argo-expr
         env:
