@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.6.1](https://github.com/blacha/release-test/compare/v5.6.0...v5.6.1) (2023-07-05)
+
+
+### Bug Fixes
+
+* env is not allowed in matrix ([ec52c64](https://github.com/blacha/release-test/commit/ec52c644cb7d534b91162a41343fbfb22c85cea1))
+* use { } around env vars ([8dd247e](https://github.com/blacha/release-test/commit/8dd247e2b483fe74e49626143e89fa616dec2ecc))
+
 ## [5.6.0](https://github.com/blacha/release-test/compare/v5.5.1...v5.6.0) (2023-07-05)
 
 
