@@ -43,7 +43,7 @@ jobs:
 
       - name: Build Binary
         run: |
-            go build ${{ matrix.target }}/argo-expr
+            go build -o ${{ matrix.target }}/argo-expr
 
       - name: Pacakge release
         run: |
