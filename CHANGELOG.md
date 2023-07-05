@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.5.0](https://github.com/blacha/release-test/compare/v5.4.0...v5.5.0) (2023-07-05)
+
+
+### Features
+
+* build artifacts ([518841b](https://github.com/blacha/release-test/commit/518841ba5150cd1b52bdd2429321fb0b473dcd3d))
+
 ## [5.4.0](https://github.com/blacha/release-test/compare/v5.3.0...v5.4.0) (2023-07-05)
 
 
