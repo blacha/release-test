@@ -36,6 +36,27 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+## [5.3.0](https://github.com/blacha/release-test/compare/v5.2.0...v5.3.0) (2023-07-05)
+
+
+### Features
+
+* add tests ([d81a0f1](https://github.com/blacha/release-test/commit/d81a0f127d2c03bc90edaba605ee14e66fc13fc6))
+* pkg-a change ([9d19fe2](https://github.com/blacha/release-test/commit/9d19fe2f3f41b691b01e5a4f925dce68f3520619))
+* pkg-a change ([d5a06a1](https://github.com/blacha/release-test/commit/d5a06a1cc31aa9cc88ae34c438a50d5879b59db4))
+* **pkg-a:** add goodbye ([72d4209](https://github.com/blacha/release-test/commit/72d4209d7455356d1e26e5cad10a9fa5c3fa67b0))
+* **pkg-a:** new feature ([f780410](https://github.com/blacha/release-test/commit/f780410d3c2d11d3eb40ff6fef4c17d39a1272bb))
+* play with release-please ([1ca70e7](https://github.com/blacha/release-test/commit/1ca70e746ebaeffe59c67238d675bd4586f2431f))
+* release-please go ([d5a43c1](https://github.com/blacha/release-test/commit/d5a43c1524e92b4b2a43754abce274bbddf95b73))
+
+
+### Bug Fixes
+
+* add lerna config ([8f600ae](https://github.com/blacha/release-test/commit/8f600ae56b4af55baed0a27cd28decb6943675f2))
+* lock file ([bc4cc91](https://github.com/blacha/release-test/commit/bc4cc9193397393b6593bf46786ea476b0595057))
+* pkg-b change ([db74368](https://github.com/blacha/release-test/commit/db74368573e44f961c10196a30e21e088da95e68))
+* pkg-b change color ([707affe](https://github.com/blacha/release-test/commit/707affeb5b08f37690691ed9853d9e9058fe5c9d))
+
 ## [5.2.0](https://github.com/blacha/release-test/compare/v5.1.0...v5.2.0) (2022-08-11)
 
 
