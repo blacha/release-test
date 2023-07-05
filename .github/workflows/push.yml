@@ -1,21 +1,21 @@
-# name: push
+name: push
 
-# on: [push]
+on: [push]
 
-# jobs:
-#   build-containers:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Setup docker tags
-#         id: tags
-#         uses:  actions/github-script@v6
-#         with: 
-#             result-encoding: string
-#             script: 
-#               const tags = [];
-#               tags.push('ghcr.io/${{ github.repository }}:latest');
-#               tags.push('ghcr.io/${{ github.repository }}:${{ steps.version.outputs.version }}');
-#               console.log(github, context)
-#               console.log('${{github.ref}}');
-#               console.log('${{github.event.head_commit.message}}');
-#               return tags.join(', ')
+jobs:
+  build-containers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup docker tags
+        id: tags
+        uses:  actions/github-script@v6
+        with: 
+            result-encoding: string
+            script: 
+              const tags = [];
+              tags.push('ghcr.io/${{ github.repository }}:latest');
+              tags.push('ghcr.io/${{ github.repository }}:${{ steps.version.outputs.version }}');
+              console.log(github, context)
+              console.log('${{github.ref}}');
+              console.log('${{github.event.head_commit.message}}');
+              return tags.join(', ')

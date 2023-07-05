@@ -6,7 +6,7 @@ on:
 
 jobs:
   release_please:
-    name: Create Release Pull Request
+    name: Release Please Pull Request
     runs-on: ubuntu-latest
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}
