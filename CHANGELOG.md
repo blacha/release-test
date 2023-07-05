@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.4.0](https://github.com/blacha/release-test/compare/v5.3.0...v5.4.0) (2023-07-05)
+
+
+### Features
+
+* hello world! ([8f67d3d](https://github.com/blacha/release-test/commit/8f67d3d07d2f313437edd4cc1c937f5097bc073a))
+
 ## [5.3.0](https://github.com/blacha/release-test/compare/v5.2.0...v5.3.0) (2023-07-05)
 
 
