@@ -32,7 +32,6 @@ jobs:
           include:
             - target: x86_64-linux
               os: ubuntu-latest
-              name: x86_64-linux.tar.gz
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
@@ -51,14 +50,14 @@ jobs:
             cp ../README.md .
             cp ../CHANGELOG.md .
             cp ../LICENSE .
-            tar czvf argo-expr-${{ matrix.name }} *
+            tar czvf ../argo-expr-${{ matrix.target }}.tar.gz *
             cd -
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: argo-expr-${{ matrix.name }}
-          path: argo-expr-${{ matrix.name }}
+          name: argo-expr-${{ matrix.target }}.tar.gz
+          path: argo-expr-${{ matrix.target }}.tar.gz
 
   upload_artifacts:
     name: Add Build Artifacts to Release
