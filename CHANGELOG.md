@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.6.0](https://github.com/blacha/release-test/compare/v5.5.1...v5.6.0) (2023-07-05)
+
+
+### Features
+
+* use env var for name ([f3f20d0](https://github.com/blacha/release-test/commit/f3f20d0b0746721d40ff27f71a327cf6cbd932ef))
+
 ## [5.5.1](https://github.com/blacha/release-test/compare/v5.5.0...v5.5.1) (2023-07-05)
 
 
