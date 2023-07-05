@@ -6,6 +6,7 @@ on:
 
 jobs:
   release_please:
+    name: Create Release Pull Request
     runs-on: ubuntu-latest
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}
@@ -17,7 +18,8 @@ jobs:
           release-type: go
           token: ${{ secrets.GITHUB_TOKEN }}
 
-  publish_release:
+  build_artifacts:
+    name: Build artifacts
     permissions:
       contents: read
       id-token: write
@@ -32,12 +34,10 @@ jobs:
 
       - uses: actions/setup-go@v4
 
-      # TODO build packages
-
 
   upload_artifacts:
-    name: Add CLI Build Artifacts to Release
-    needs: [release_please, publish_release]
+    name: Add Build Artifacts to Release
+    needs: [release_please, build_artifacts]
     runs-on: ubuntu-latest
     permissions:
       contents: write # Adding assets require permissions
