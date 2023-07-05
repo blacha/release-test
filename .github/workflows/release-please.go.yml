@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - master
+env:
+  CLI_NAME: argo-expr
+
 
 jobs:
   release_please:
@@ -30,9 +33,9 @@ jobs:
         fail-fast: false
         matrix:
           include:
-            - target: argo-expr-x86_64-linux
+            - target: $CLI_NAME-x86_64-linux
               os: ubuntu-latest
-              name: argo-expr-x86_64-linux.tar.gz
+              name: $CLI_NAME-x86_64-linux.tar.gz
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
@@ -43,7 +46,7 @@ jobs:
 
       - name: Build Binary
         run: |
-            go build -o ${{ matrix.target }}/argo-expr
+            go build -o ${{ matrix.target }}/$CLI_NAME
 
       - name: Pacakge release
         run: |
@@ -51,7 +54,7 @@ jobs:
             cp ../README.md .
             cp ../CHANGELOG.md .
             cp ../LICENSE .
-            tar czvf ../${{ matrix.name }} .
+            tar czvf ${{ matrix.name }} *  
             cd -
 
       - name: Release | Upload artifacts
@@ -71,10 +74,10 @@ jobs:
         uses: actions/download-artifact@v3
 
       - name: Create Checksums
-        run: for file in argo-expr-*/argo-expr-*; do openssl dgst -sha256 -r "$file" | awk '{print $1}' > "${file}.sha256"; done
+        run: for file in ${CLI_NAME}-*/${CLI_NAME}-*; do openssl dgst -sha256 -r "$file" | awk '{print $1}' > "${file}.sha256"; done
 
-      - name: Add Artifactws To Release
+      - name: Add Artifacts To Release
         run: |
-          gh release upload ${{ needs.release_please.outputs.tag_name }} argo-expr-*/argo-expr* --repo=blacha/argo-expr
+          gh release upload ${{ needs.release_please.outputs.tag_name }} ${CLI_NAME}-*/${CLI_NAME}* --repo=${{ github.repository }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
