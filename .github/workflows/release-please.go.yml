@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - master
-env:
-  CLI_NAME: argo-expr
-
 
 jobs:
   release_please:
@@ -46,7 +43,7 @@ jobs:
 
       - name: Build Binary
         run: |
-            go build -o ${{ matrix.target }}/${CLI_NAME}
+            go build -o ${{ matrix.target }}/argo-expr
 
       - name: Pacakge release
         run: |
@@ -54,14 +51,14 @@ jobs:
             cp ../README.md .
             cp ../CHANGELOG.md .
             cp ../LICENSE .
-            tar czvf ${CLI_NAME}-${{ matrix.name }} *  
+            tar czvf argo-expr-${{ matrix.name }} *
             cd -
 
-      - name: Release | Upload artifacts
+      - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: ${CLI_NAME}-${{ matrix.name }}
-          path: ${CLI_NAME}-${{ matrix.name }}
+          name: argo-expr-${{ matrix.name }}
+          path: argo-expr-${{ matrix.name }}
 
   upload_artifacts:
     name: Add Build Artifacts to Release
@@ -70,14 +67,14 @@ jobs:
     permissions:
       contents: write # Adding assets require permissions
     steps:
-      - name: Download Artifacts
+      - name: Download artifacts
         uses: actions/download-artifact@v3
 
-      - name: Create Checksums
-        run: for file in ${CLI_NAME}-*/${CLI_NAME}-*; do openssl dgst -sha256 -r "$file" | awk '{print $1}' > "${file}.sha256"; done
+      - name: Create checksums
+        run: for file in argo-expr-*/argo-expr-*; do openssl dgst -sha256 -r "$file" | awk '{print $1}' > "${file}.sha256"; done
 
-      - name: Add Artifacts To Release
+      - name: Add artifacts To release
         run: |
-          gh release upload ${{ needs.release_please.outputs.tag_name }} ${CLI_NAME}-*/${CLI_NAME}* --repo=${{ github.repository }}
+          gh release upload ${{ needs.release_please.outputs.tag_name }} argo-expr-*/argo-expr* --repo=${{ github.repository }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
