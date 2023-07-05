@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.6.2](https://github.com/blacha/release-test/compare/v5.6.1...v5.6.2) (2023-07-05)
+
+
+### Bug Fixes
+
+* go back to cli name ([e5fa2dd](https://github.com/blacha/release-test/commit/e5fa2dd0b5b8b94d56e8e69bc3bcbd3c5ae40d56))
+
 ## [5.6.1](https://github.com/blacha/release-test/compare/v5.6.0...v5.6.1) (2023-07-05)
 
 
