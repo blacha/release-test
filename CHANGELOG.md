@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.6.3](https://github.com/blacha/release-test/compare/v5.6.2...v5.6.3) (2023-07-05)
+
+
+### Bug Fixes
+
+* download tar file ([0e751cf](https://github.com/blacha/release-test/commit/0e751cfed592bafa209b0cd688038753164b2ae3))
+
 ## [5.6.2](https://github.com/blacha/release-test/compare/v5.6.1...v5.6.2) (2023-07-05)
 
 
