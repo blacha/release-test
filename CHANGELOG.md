@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.5.1](https://github.com/blacha/release-test/compare/v5.5.0...v5.5.1) (2023-07-05)
+
+
+### Bug Fixes
+
+* use -o ([337bbab](https://github.com/blacha/release-test/commit/337bbabcb67e3b0857c3cb2d0f7f7f25d273dc0c))
+
 ## [5.5.0](https://github.com/blacha/release-test/compare/v5.4.0...v5.5.0) (2023-07-05)
 
 
