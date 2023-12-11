@@ -3,6 +3,10 @@ on:
     branches:
       - master
 
+permissions:
+  contents: write
+  pull-requests: write
+
 name: release-please
 jobs:
   release-please:
@@ -13,8 +17,6 @@ jobs:
       - uses: google-github-actions/release-please-action@v4
         id: release
         with:
-          command: manifest
-          release-type: node
           token: ${{ secrets.GITHUB_TOKEN }}
 
   publish-release:
@@ -23,7 +25,7 @@ jobs:
     if: ${{ needs.release-please.outputs.releases_created }}
     steps:
       - name: Build and test
-        uses: linz/action-typescript@v1
+        uses: linz/action-typescript@v3
         with:
           registry-url: "https://npm.pkg.github.com"
 
