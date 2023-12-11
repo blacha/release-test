@@ -5,6 +5,7 @@
     "main": "src/index.js",
     "repository": "git@github.com:blacha/release-test.git",
     "author": "Blayne Chard <blayne@chard.com>",
+    "type": "module",
     "license": "MIT",
     "scripts": {
         "start": "node src/index.js",
