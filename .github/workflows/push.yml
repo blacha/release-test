@@ -10,4 +10,4 @@ jobs:
       - name: Build and test
         uses: linz/action-typescript@v3
         with:
-          registry-url: "https://npm.pkg.github.com"
+          registry-url: 'https://npm.pkg.github.com'
