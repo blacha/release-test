@@ -1,10 +1,10 @@
 import assert from 'node:assert';
-import test from 'node:test';
+import { describe, it } from 'node:test';
 
-import { handler } from '../index.js';
+import { handler } from '../index.mjs';
 
-test('pkg-a', () => {
-  test('should return something', () => {
+describe('pkg-a', () => {
+  it('should return something', () => {
     assert.notEqual(handler('test'), null);
   });
 });
