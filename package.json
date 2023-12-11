@@ -10,6 +10,7 @@
     "scripts": {
         "start": "node src/index.js",
         "build": "echo no build",
+        "test": "lerna run test",
         "lint": "eslint packages/ --fix --quiet --ignore-path .gitignore"
     },
     "devDependencies": {
