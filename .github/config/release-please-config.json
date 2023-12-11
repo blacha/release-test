@@ -4,5 +4,6 @@
     "packages/pkg-a": {},
     "packages/pkg-b": {}
   },
-  "release-type": "node"
+  "release-type": "node",
+  "plugins": ["node-workspace"]
 }
