@@ -6,5 +6,6 @@ import { handler } from '../index.mjs';
 describe('pkg-a', () => {
   it('should return something', () => {
     assert.notEqual(handler('test'), null);
+    assert.notEqual(handler('test2'), null);
   });
 });
