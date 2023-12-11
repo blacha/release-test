@@ -12,6 +12,9 @@
   "scripts": {
     "test": "node --test"
   },
+  "dependencies": {
+    "@blacha/pkg-a": "6.3.0"
+  },
   "publishConfig": {
     "access": "public"
   }
