@@ -1,5 +1,14 @@
 # Changelog
 
+## [5.7.0](https://github.com/blacha/release-test/compare/v5.6.3...v5.7.0) (2023-12-11)
+
+
+### Features
+
+* back to typescript ([05add4e](https://github.com/blacha/release-test/commit/05add4e80c28f3163181e524e2216d19034192d3))
+* config ([ceb2cc7](https://github.com/blacha/release-test/commit/ceb2cc79d113b1ec6f8487ed8cff893f5373ef43))
+* workflows ([ff95361](https://github.com/blacha/release-test/commit/ff95361a67a79f1d8279f5ea832b53fa898ac5a1))
+
 ## [5.6.3](https://github.com/blacha/release-test/compare/v5.6.2...v5.6.3) (2023-07-05)
 
 
