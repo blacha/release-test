@@ -30,8 +30,3 @@ jobs:
         uses: linz/action-typescript@v3
         with:
           registry-url: 'https://npm.pkg.github.com'
-
-      - name: Publish to NPM
-        run: npx lerna publish from-package --no-push --no-private --yes
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
