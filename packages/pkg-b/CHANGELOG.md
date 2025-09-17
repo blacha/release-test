@@ -1,5 +1,19 @@
 # Changelog
 
+## [6.3.1](https://github.com/blacha/release-test/compare/pkg-b-v6.3.0...pkg-b-v6.3.1) (2025-08-03)
+
+
+### Bug Fixes
+
+* include package ([39ca52b](https://github.com/blacha/release-test/commit/39ca52b39de49b0d6a6f971dbb83b6af45896965))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @blacha/pkg-a bumped from 6.3.0 to 6.4.0
+
 ## [6.3.0](https://github.com/blacha/release-test/compare/pkg-b-v6.2.0...pkg-b-v6.3.0) (2023-12-11)
 
 

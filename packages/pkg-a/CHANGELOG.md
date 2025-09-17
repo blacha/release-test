@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.4.0](https://github.com/blacha/release-test/compare/pkg-a-v6.3.0...pkg-a-v6.4.0) (2025-08-03)
+
+
+### Features
+
+* **pkg-a:** new feature ([aed5b7e](https://github.com/blacha/release-test/commit/aed5b7e195927a0a80f826199c37a9f80d509f00))
+
 ## [6.3.0](https://github.com/blacha/release-test/compare/pkg-a-v6.2.0...pkg-a-v6.3.0) (2023-12-11)
 
 

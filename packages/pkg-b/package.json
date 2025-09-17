@@ -1,6 +1,6 @@
 {
   "name": "@blacha/pkg-b",
-  "version": "6.3.0",
+  "version": "6.3.1",
   "description": "",
   "license": "MIT",
   "type": "module",
@@ -13,7 +13,7 @@
     "test": "node --test"
   },
   "dependencies": {
-    "@blacha/pkg-a": "6.3.0"
+    "@blacha/pkg-a": "6.4.0"
   },
   "publishConfig": {
     "access": "public"
