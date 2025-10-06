@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build and test
-        uses: linz/action-typescript@v3
+        uses: linz/action-typescript@master
         with:
           registry-url: 'https://npm.pkg.github.com'
