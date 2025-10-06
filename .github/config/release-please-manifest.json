@@ -2,5 +2,6 @@
   "packages/pkg-a": "6.4.0",
   "packages/pkg-b": "6.3.1",
   "simple/a": "0.1.0",
-  "simple/b": "0.4.0"
+  "simple/b": "0.5.0",
+  ".": "1.0.0"
 }
